@@ -1,0 +1,137 @@
+/* stylesheet for cats site */
+html {
+	font-family: "Comic Sans MS";
+}
+
+header {
+	background-color: #ccff66;
+	text-align: center;
+	width: 100%;
+}
+
+.author {
+	font-style: italic;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+	flex: auto;
+	position: relative;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.frame {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	outline-style: solid;
+	outline-width: 3px;
+	outline-offset: -6px;
+	outline-color: white;
+	background: rgba(0,0,0,0.4);
+	transition: opacity 0.2s ease-in-out;
+}
+
+.box:hover .frame {
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.caption {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.modal-container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	background-color: rgba(0,0,0,0.6);
+	margin-left: -8px;
+	visibility: hidden;
+	opacity: 0;
+	color: white;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 400px;
+	width: 700px;
+	background-color: #a58da5;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+
+.close {
+	float: right;
+}
+
+.close:hover {
+	cursor: pointer;
+	filter: blur(0.5px);
+}
+
+.modal-flex {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 80%;
+	width: 95%;
+	transform: translate(-50%,-50%);
+	align-items: center;
+}
+
+.modal-flex>div {
+	max-height: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+}
+
+.imgprev {
+	object-fit: cover;
+	height: 300px;
+	width: 400px;
+}
+
+.title {
+	font-size: 30px;
+}
+
+.descr {
+	margin-top: 15px;
+}
+
+.modal-img {
+	top: 50%;
+    position: relative;
+    transform: translate(0px,-50%);
+    vertical-align: middle;
+    line-height: 100%;
+}

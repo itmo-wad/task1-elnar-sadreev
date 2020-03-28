@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang en-US>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- ugly hack: jquery added bacause of chrome bug triggering all trasitions at page load -->
+		<script 
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+		<title>Cats&Cats</title>
+	</head>
+
+<body>
+	<header>
+		<h2>Cats&Cats</h2>
+		<p class="author">by elnars</p>
+	</header>
+	<div class="container">
+		<div class="box">
+			
+				<img src="img/cat1.png">
+				<div class="frame">
+				<div class="caption">
+					Cat 1
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat2.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 2
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat3.jpeg">
+				<div class="frame">
+				<div class="caption">
+					Cat 3
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat4.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 4
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat5.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 5
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat6.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 6
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat7.jpeg">
+				<div class="frame">
+				<div class="caption">
+					Cat 7
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat8.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 8
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat9.jpeg">
+				<div class="frame">
+				<div class="caption">
+					Cat 9
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat10.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 10
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat11.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 11
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat12.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 12
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat13.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 13
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat14.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 14
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat15.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 15
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat16.jpeg">
+				<div class="frame">
+				<div class="caption">
+					Cat 16
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat17.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 17
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat18.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 18
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat19.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 19
+				</div>
+				</div>
+			
+		</div>
+		<div class="box">
+			
+				<img src="img/cat20.jpg">
+				<div class="frame">
+				<div class="caption">
+					Cat 20
+				</div>
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="modal-container" id="modal">
+	<div class="modal">
+		<div class="close" id="close">close &times;</div>
+		<div class="modal-flex">
+		<div class="modal-img">
+			<img class="imgprev" id="imgp">
+		</div>
+		<div class="descr">
+			<div class="title" id="title"></div>
+			<div class="description" id="desc"></div>
+		</div>
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		var modal = document.getElementById("modal");
+		var imgp = document.getElementById("imgp");
+		var title = document.getElementById("title");
+		var desc = document.getElementById("desc");
+
+		document.addEventListener('click', preview);
+		function preview(e) {
+			if (e.target.className=="frame") {
+				var box = e.target.parentElement;
+				imgp.src = box.childNodes[1].src;
+				title.innerHTML = box.childNodes[3].childNodes[1].innerHTML;
+				desc.innerHTML = "Information about " + title.innerHTML;
+				modal.style.visibility = "visible";
+				modal.style.opacity = 1;
+			}
+		}
+
+		var close = document.getElementById("close");
+		close.onclick = function() {
+			modal.style.opacity = 0;
+			setTimeout(function () {
+				modal.style.visibility = "hidden";
+			}, 300);
+		}
+	</script>
+
+</body>
+</html>
